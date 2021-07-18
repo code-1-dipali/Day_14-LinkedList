@@ -1,6 +1,5 @@
 package com.bridglabz.programs;
 
-
 public class LinkedList {
 	private static Node head;
 	public static class Node {
@@ -18,6 +17,21 @@ public class LinkedList {
 			Node thirdNode = new Node(70);
 			linkedList.head.next = secondNode;
 			secondNode.next = thirdNode;
+			printList();
 		}
 	}
+	
+
+	 public static void printList()
+	 {
+	     Node currNode = head;
+	 
+	     System.out.print("LinkedList: ");
+	 
+	     while (currNode != null) {
+	         System.out.print(currNode.data + "-->");
+	         currNode = currNode.next;
+	     }
+	     System.out.println(currNode);
+	 }
 }
