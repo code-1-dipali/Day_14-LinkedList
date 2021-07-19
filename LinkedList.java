@@ -1,6 +1,4 @@
-
 package com.bl.program.day14;
-
 public class LinkedList {
 	private static Node head;
 	
@@ -14,8 +12,9 @@ public class LinkedList {
 		
 		public static void main(String[] args) {
 			appendList(56);
-			appendList(30);
 			appendList(70);
+			insertBetween(56, 30);
+			pop();
 			printList();
 		}
 	}
@@ -28,6 +27,18 @@ public class LinkedList {
 	         currNode = currNode.next;
 	     }
 	     System.out.println(currNode);
+	 }
+	 
+	 public static void insertBetween(int position, int data) {
+		 Node currentNode = head;
+		 Node newNode = new Node(data);
+		 
+		 while(currentNode.data != position) {
+			 System.out.println(currentNode.data);
+			 currentNode = currentNode.next;
+		 }
+		 newNode.next  = currentNode.next;
+		 currentNode.next = newNode;
 	 }
 	 
 	 public static void appendList(int data) {
@@ -44,4 +55,10 @@ public class LinkedList {
 			 currentNode.next = newNode;
 		 }
 	 }
-}package com.bridglabz.programs;
+	 
+	 public static void pop() {
+		 Node currentNode = head.next;
+		 head.next = null;
+		 head = currentNode;
+	 }
+}
